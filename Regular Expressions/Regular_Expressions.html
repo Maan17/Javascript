@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Regular Expressions</title>
+        <script type="text/javascript">
+            function validate(){
+                var username=document.getElementById("uname").value;
+                //passing 'i' makes it case insensitive
+                //var regx= /E00/i;//method 1 of creating reg exp object
+                var regx= /[a-x A-X]00/;
+                //regx=new RegExp("E00","i");//method 2 of creating reg exp object
+                //test method returns boolean value
+                if(regx.test(username)){
+                    alert("Valid Username");
+                }
+                else{
+                    alert("Invalid Username");
+                    document.getElementById("lbluser").style.visibility="visible";
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Regular Expressions</h1>
+        <form onsubmit="return validate()" action="message.html">
+            <input id="uname" placeholder="Username" type="text"/>
+            <label id="lbluser" style="color:red; visibility:hidden;">Invalid</label><br><br>
+            <button onclick="validate()" type="submit">Submit</button>
+        </form>
+    </body>
+</html>

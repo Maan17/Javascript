@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Animate</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>Animate</h1>
+        <button id="btn3">Animate</button><br><br>
+        <div id="cube" class="mycube">
+            <p>CUBE</p>
+        </div> 
+    </body>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn3").click(function(){
+                $("#cube").animate({
+                    left:'150px',
+                    opacity:'1',
+                    width:'200px',
+                    height:'200px'
+                },'slow')
+            });
+        });
+    </script>
+</html>

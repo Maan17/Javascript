@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Intoduction to jQuery UI</title>
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/JQuery/css/style.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.structure.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.theme.css">
+    </head>
+    <body>
+        <h3>Autocomplete</h3>
+        <div id="mydiv">
+            <label><b>ENter Your favourite city</b></label>
+            <input type="text" id="citytextbox" name="">
+        </div>
+    </body>
+    <script src="C:/Users/Maansi/Desktop/Javascript/JQuery/js/jquery.js"></script>
+    <script src="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        //we have to pass an array of datasets for autocompletion
+        var mycities=["Varanasi","Jhansi","New York","Tulsa","Delhi"];
+        $("#citytextbox").autocomplete({
+            //here source is array(can be json or any other type )
+            source:mycities,
+        },
+        {
+            //first one will be in focus
+            autoFocus:true,
+            //after how much time suggestions should appear
+            delay:300,
+            //after how much letters suggestions to come
+            minLength:2,
+        });
+    </script>
+</html>

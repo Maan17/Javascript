@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>DOM</title>
+        <script type="text/javascript">
+            document.write("<h1>DOM Manipulations</h1>");
+            function buttonClick(){
+                
+                //innerHTML is the property of the element that we are 
+                //using it conatins the text that the tag holds
+                var x=document.getElementById("Heading2").innerHTML="Maansi did this!!";
+                alert(x);
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="buttonClick()">Click Me</button>
+        <h2 id="Heading2">Some random text</h2>
+    </body>
+ 
+</html>

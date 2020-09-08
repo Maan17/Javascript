@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Input</title>
+        <script type="text/javascript">
+            document.write("<h1>Taking Input from User</h1>");
+            function fn1(){
+                //.value is the property of text boxes
+                //it takes value from the text boxes 
+                var user=document.getElementById("text1").value;
+                var pass=document.getElementById("text2").value;
+                if(user==pass)
+                    alert("Username and password match. ");
+                else
+                    alert("Username and password don't match. ");
+            }
+        </script>
+    </head>
+    <body>
+        <input id="text1" placeholder="Username">
+        <br><br>
+        <input id="text2" placeholder="Password">
+        <br><br>
+        <button onclick="fn1()" id="btn1">Check</button>
+    </body>
+</html>

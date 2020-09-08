@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Input</title>
+        <script type="text/javascript">
+            document.write("<h1>Taking Input through radio buttons</h1>");
+            function fn1(){
+                var rd1=document.getElementById("rd1");
+                var rd2=document.getElementById("rd2");
+
+                if(rd1.checked==true){
+                    document.body.style.backgroundColor = "#FFB6C1";
+                    alert(rd1.value);
+                }
+                else if(rd2.checked==true){
+                    document.body.style.backgroundColor = "#DA70D6";
+                    alert(rd2.value);
+                }
+                else{
+                    document.body.style.backgroundColor = "#ccff00";
+                    alert("Default Color");
+                }
+            }
+        </script>
+    </head>
+    <body id="bg">
+        <input id="rd1" name="grp1" type="radio" value="Pink Color">Pink<br>
+        <input id="rd2" name="grp1" type="radio" value="Orchid Color">Orchid<br>
+        <button onclick="fn1()">Click Me!!</button>
+    </body>
+</html>

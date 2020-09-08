@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Control Statements</title>
+        <script type="text/javascript">
+            document.write("<h1>If-Else Control Statements</h1>")
+            var x=2;
+            if(x%2==0)
+                document.write("<h3>Even number</h3>");
+            else
+                document.write("<h3>Odd Number</h3>");
+
+            //else if block
+            if(x>0)
+                document.write("<h3>Positive number</h3>");
+            else if(x<0)
+                document.write("<h3>Negative number</h3>");
+            else
+                document.write("<h3>Number is neither positive nor negative</h3>");
+            
+            //nested if else
+            if(x>0){
+                document.write("<h3>Positive number</h3>");
+                if(x%2==0)
+                    document.write("<h3>Even number</h3>");
+                else
+                    document.write("<h3>Number is positive but odd</h3>");
+            }
+            else
+                document.write("<h3>Number is negative</h3>");
+            
+            //Switch Case
+            document.write("<h1>Switch-Case Control Statements</h1>")
+            //it can accept boolean,strings,number and any calculation value
+            var day=2;
+            switch(day){
+                case 1:
+                    document.write("<h3>Sunday</h3>");
+                    break;
+                case 2:
+                    document.write("<h3>Monday</h3>");
+                    break;
+                case 3:
+                    document.write("<h3>Tuesday</h3>");
+                    break;
+                case 4:
+                    document.write("<h3>Wednesday</h3>");
+                    break;
+                case 5:
+                    document.write("<h3>Thursday</h3>");
+                    break;
+                case 6:
+                    document.write("<h3>Friday</h3>");
+                    break;
+                case 7:
+                    document.write("<h3>Saturday</h3>");
+                    break;
+                default:
+                    document.write("<h3>Wrong Input</h3>");
+            }
+
+            //for loop
+            document.write("<h1>For loop</h1>");
+            for(var x=1;x<=10;x++){
+                document.write("<h2>"+(5*x)+"</h2>");
+            }
+
+            //while loop
+            document.write("<h1>While loop</h1>");
+            var x=1;
+            while(x<=10){
+                document.write("<h2>"+(x)+"</h2>");
+                x+=2;
+            }
+
+            //do-while
+            document.write("<h1>Do-While loop</h1>");
+            var x=7;
+            do{
+                document.write("<h2>"+x+"</h2>");
+                x--;
+            }
+            while(x>5);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

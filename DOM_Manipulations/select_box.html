@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>DOM</title>
+        <script type="text/javascript">
+            document.write("<h1>Select Box</h1>");
+            function fn1(){
+                var select=document.getElementById("selectbox");
+                //.options is the collection of all options 
+                //in select box hence it is a type of array
+                //selected index is another property of object
+                //var select which gives us which index is selected
+                //in select box
+                alert(select.options[select.selectedIndex].value);    
+            }
+        </script>
+    </head>
+    <body>
+        <select id="selectbox">
+            <option value="Pink">Pink</option>
+            <option value="Orchid">Orchid</option>
+            <option value="Lime">Lime</option>
+        </select>
+        <br><br>
+        <button onclick="fn1()">Click Me!</button>
+    </body>
+</html>

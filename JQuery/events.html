@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Events</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>Events</h1>
+        <h2 class="first" id="firstH2">Selectors up jQuery-2</h2>
+        <p>Paragraph free of any division</p>
+        <div class="mydivs" id="firstdiv">
+            <p>This is 1st para in 1st div</p>
+            <p>This is 2nd para in 1st div</p>
+        </div>
+        <div class="mydivs" id="seconddiv">
+            <p>This is 3rd para in 2nd div</p>
+        </div>
+        <div class="mydivs" id="thirddiv">
+            <ul>
+                <li>List 1</li>
+                <li>List 2</li>
+                <li>List 3</li>
+                <li>List 4</li>
+            </ul>
+        </div>
+        <button id="btn1">Click Me 1</button><br><br>
+        <button id="btn2" >Click Me 2</button><br><br>
+        <button id="btn3">Click Me 3</button>
+    </body>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script>
+        //selecting the entire document object
+        //any code we want to call for jQuery should be inside ready function
+        //ready method enables the functions to work only after
+        //the entire document is loaded completely
+        //like a button will not work until entire site content is loaded properly
+        $(document).ready(function(){
+            //fade first div on clicking button
+            //equivalent to onclick() method
+            $("#btn1").click(function(){
+                $("#firstdiv").fadeToggle();
+            });
+            //fade second div on double clicking button
+            $("#btn2").dblclick(function(){
+                $("#seconddiv").fadeToggle();
+            });
+            //mouseenter equivalent to onmouseover 
+            $("#btn3").mouseenter(function(){
+                $("#thirddiv").fadeOut(2000);
+            });
+            //mouseleave equivalent to onmouseout 
+            $("#btn3").mouseleave(function(){
+                $("#thirddiv").fadeIn(2000);
+            });
+            //hover event is a combi of mouseenter & mouseleave
+        });
+    </script>
+</html>

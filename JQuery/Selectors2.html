@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>jQuery Selectors</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h2 class="first" id="firstH2">Selectors up jQuery-2</h2>
+        <p>Paragraph free of any division</p>
+        <div class="mydivs" id="firstdiv">
+            <p>This is 1st para in 1st div</p>
+            <p>This is 2nd para in 1st div</p>
+        </div>
+        <div class="mydivs" id="seconddiv">
+            <p>This is 3rd para in 2nd div</p>
+        </div>
+        <div class="mydivs" id="thirddiv">
+            <ul>
+                <li>List 1</li>
+                <li>List 2</li>
+                <li>List 3</li>
+                <li>List 4</li>
+            </ul>
+        </div>
+        <button onclick="fn1()" id="btn1">Click Me</button>
+    </body>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script>
+        function fn1(){
+            //fading all divs at once
+            //$("div").fadeToggle(2000);
+            //fading only first 2 divs
+            //$("#firstdiv,#seconddiv").fadeToggle(2000);
+            //fading only first div and para of 2nd div
+            //$("#firstdiv,p").fadeToggle(2000);
+            //fading only paras which are only inside a division
+            //$("div > p").fadeToggle(2000);
+            //fading only first paragraph of entire document
+            //$("p:first").fadeToggle(2000);
+            //fading only first divs having class my divs
+            //$(".mydivs:first").fadeToggle(2000);
+            //fading only even divs having class my divs
+            //$(".mydivs:even").fadeToggle(2000);
+            //fading only even lists
+            $("li:even").fadeToggle(2000);
+        }
+    </script>
+</html>

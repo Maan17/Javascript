@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Form Validations</title>
+        <script type="text/javascript">
+            var opacity=0;
+            var intervalID=0;
+            function fadeOut(){
+                //hide function will be called after every 200ms
+                intervalID=setInterval(hide,200);
+            }
+            function fadeIn(){
+                intervalID=setInterval(show,200);
+            }
+            function show(){
+                var img=document.getElementById("img1");
+                //fetching the current opacity
+                opacity=Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+                if(opacity<1){
+                    opacity=opacity+0.1;
+                    img.style.opacity=opacity;
+                }
+                else
+                    clearInterval(intervalID);
+                //to see the opacity value in console
+                //decomment the below line
+                //console.log(opacity);
+            }
+            function hide(){
+                var img=document.getElementById("img1");
+                opacity=Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+                if(opacity>0){
+                    opacity=opacity-0.1;
+                    img.style.opacity=opacity;
+                }
+                else
+                    clearInterval(intervalID);
+            }
+            var width=100;
+            var difference=2;
+            var intervalID=0;
+            function increase(){
+                clearInterval(intervalID);
+                intervalID=setInterval(expand,20);
+            }
+            function decrease(){
+                clearInterval(intervalID);
+                intervalID=setInterval(shrink,20);
+            }
+            function shrink(){
+                if(width>100){
+                    width=width-difference;
+                    document.getElementById("img2").style.width=width;
+                }
+                else
+                    clearInterval(intervalID);
+            }
+            function expand(){
+                if(width<200){
+                    width=width+difference;
+                    document.getElementById("img2").style.width=width;
+                }
+                else
+                    clearInterval(intervalID);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Fade In - Fade Out</h1>
+        <button onclick="fadeOut()" id="btnAdd">Fade Out</button>
+        <br>
+        <img id="img1" src="DOM_Manipulations\download.png" width="250px"/>
+        <br>
+        <button onclick="fadeIn()" id="btnStop">Fade In</button>
+        <h1>Scaling</h1>
+        <img onmouseover="increase()" onmouseout="decrease()" id="img2" src="DOM_Manipulations\heart.png" width="100"/>
+    </body>
+</html>

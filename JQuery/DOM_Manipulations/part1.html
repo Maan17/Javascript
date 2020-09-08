@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>DOM Manipulations</title>
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/JQuery/css/style.css">
+    </head>
+    <body>
+        <h1>DOM Manipulations-text(),html(),attr(),css()</h1>
+        <button id="btn1">HTML</button>
+        <button id="btn2">Text</button>
+        <button id="btn3">Attr</button>
+        <button id="btn4">Css</button>
+        <button id="btn5">Change class</button>
+        <button id="btn6">Change css</button>
+        <div id="div1" class="mydivs">
+            <p id="p1" value="hello world" class="p1 class">This is third <b>Paragraph</b> in second division</p>
+        </div>
+        <script src="C:/Users/Maansi/Desktop/Javascript/JQuery/js/jquery.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function(){
+                $("#btn1").click(function(){
+                    //acesses the HTML document of the text selected along with the tags
+                    alert($("#p1").html());
+                });
+                $("#btn2").click(function(){
+                    //acesses only the text of the element selected
+                    alert($("#p1").text());
+                });
+                $("#btn3").click(function(){
+                    //acesses the attributes of the element selected
+                    alert($("#p1").attr("value"));
+                    alert($("#p1").attr("class"));
+                });
+                $("#btn4").click(function(){
+                    //acesses the css property of the element selected
+                    alert($("#p1").css("font-family"));
+                    alert($("#p1").css("border"));
+                    alert($("#p1").css("font-size"));
+                });
+                $("#btn5").click(function(){
+                    //change the value of class of the paragraph from p1 class to p2 class using attr method
+                    $("#p1").attr("class","p2 class");
+                });
+                $("#btn6").click(function(){
+                    //change the font-size
+                    $("#p1").css("font-size","25px");
+                });
+            });
+        </script>
+    </body>
+</html>

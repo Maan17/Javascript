@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Mouseover & Mouseout events</title>
+        <script type="text/javascript">
+            function validate(){
+                var username=document.getElementById("uname");
+                var password=document.getElementById("pass");
+                if(username.value.trim()==""){
+                    uname.style.border="solid 3px red";
+                    document.getElementById("lbluser").style.visibility="visible";
+                    alert("Blank Username");
+                    return false;
+                }
+                else if(password.value==""){
+                    alert("Blank Password");
+                    return false;
+                }
+                else if(password.value.trim().length<5){
+                    alert("Password too short");
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!--The method validate is going to return some value
+        if it returns a false value means the event will not be called
+        and the form will not be submitted if true value is returned 
+        then the form will be submitted and another page will be 
+        opened-->
+        <form onsubmit="return validate()" action="message.html">
+            <input id="uname" placeholder="Username" type="text"/>
+            <label id="lbluser" style="color:red; visibility:hidden;">Invalid</label><br><br>
+            <input id="pass" placeholder="Password" type="password"/><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Intoduction to jQuery UI</title>
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/JQuery/css/style.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.structure.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.theme.css">
+    </head>
+    <body>
+        <div id="mydiv">
+            <h1>ToolTip</h1>
+            <img src="C:/Users/Maansi/Desktop/Javascript/DOM_Manipulations/heart.png" width="200px"
+            title="" id="myimg">
+        </div>
+    </body>
+    <script src="C:/Users/Maansi/Desktop/Javascript/JQuery/js/jquery.js"></script>
+    <script src="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        $("img ").tooltip({
+            //make tooltip follow cursor
+            track:true,
+            //adding dynamic title
+            content:"Red Heart looks real",
+            //adding effect to tooltip:default is fadein-fadeout
+            //effects:highlight,explode,blind,bounce,pulsate,etc
+            show:{effect:"explode",duration:1000},
+            hide:{effect:"bounce",duration:1000},
+        });
+    </script>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>DOM Manipulations</title>
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/JQuery/css/style.css">
+    </head>
+    <body>
+        <h1>DOM Manipulations-addClass(),removeClass(),toggleClass()</h1>
+        <button id="btn1">Add Class</button>
+        <button id="btn2">Remove Class</button>
+        <button id="btn3">Toggle Class</button>
+        <div id="div1" class="mydivs">
+            <p id="p1" value="hello world" class="p1 class">This is first <b>Paragraph</b> in first division</p>
+        </div>
+        <div id="div2">
+            <p id="p2" value="hello world" class="p2 class">This is Second <b>Paragraph</b> in first division</p>
+        </div>
+        <script src="C:/Users/Maansi/Desktop/Javascript/JQuery/js/jquery.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function(){
+                $("#btn1").click(function(){
+                    //Adds one or more classes to the selected elements
+                    //Adds newdivclass and newparaclass to div1
+                    $("#div1").addClass("newdivclass newparaclass");
+                });
+                $("#btn2").click(function(){
+                    //Removes one or more classes from the selected elements
+                    //Removes newdivclass from div1
+                    $("#div1").removeClass("newdivclass");
+                });
+                $("#btn3").click(function(){
+                    //Toggles b/w adding or removing class from selected element
+                    //adds newdivclass to div1 if it is not applied
+                    //removes newdivclass from div1 if it is applied
+                    $("#div1").toggleClass("newdivclass");
+                });
+            });
+        </script>
+    </body>
+</html>

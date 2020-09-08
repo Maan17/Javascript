@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>DOM</title>
+        <script type="text/javascript">
+            document.write("<h1>Get Element By Class</h1>");
+            function buttonClick(){
+                
+                //innerHTML is the property of the element that we are 
+                //using it conatins the text that the tag holds
+                var element=document.getElementsByClassName("mypara");
+                for(var x=0;x<element.length;x++)
+                    element[x].style.color="red";
+            }
+        </script>
+    </head>
+    <body>
+        <p class="mypara">This is paragraph 1</p>
+        <p>This is paragraph 2</p>
+        <p class="mypara">This is paragraph 3</p>
+        <p>This is paragraph 4</p>
+        <p class="mypara">This is paragraph 5</p>
+        <a class="mypara" href="#">This is Anchor Tag</a>
+        <br><br>
+        <button onclick="buttonCLick()">Click Me!!</button>
+        </body>
+    </body>
+ 
+</html>

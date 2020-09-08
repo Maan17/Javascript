@@ -1,0 +1,41 @@
+#firstH2{
+    color:blue;
+}
+
+.first{
+    color:blue;
+}
+
+.mydivs{
+    border:2px solid blue;
+    margin:5px;
+    padding:10px;
+}
+/*Apply styling to paragraphs only inside division */
+div p{
+    color:black;
+}
+
+.mycube{
+    width:100px;
+    height:100px;
+    background-color: blueviolet;
+    opacity:0.4;
+    position:absolute;
+    padding:20px;
+}
+
+.newdivclass{
+    border-radius:10px;
+    background-color: aqua;
+}
+
+.newparaclass{
+    font-weight: bold;
+    color: brown;
+}
+
+#mydiv{
+    border:2px solid rebeccapurple;
+    padding: 10px;
+}

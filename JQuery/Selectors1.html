@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>jQuery Selectors</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h2 class="first" id="firstH2">Selectors up jQuery</h2>
+        <button onclick="fn1()" id="btn1">Click Me</button>
+    </body>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script>
+        function fn1(){
+            //id selector
+            $("#firstH2").fadeToggle(2000);
+            //class selector
+            $(".first").fadeToggle(2000);
+        }
+    </script>
+</html>

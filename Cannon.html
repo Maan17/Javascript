@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My Cannon</title>
+	</head>
+	<body style="background-color:white;font-family:verdana;"font-size="15px;"width="600px;"margin="left:auto;"margin="right:auto;">
+	<h1>My cannon</h1>
+	<p>This simulation demonstrates launching a projectile at various speeds and angles.</p>
+	<img src="C:\Users\Maansi\Desktop\my docs\download.jpg" width="500" height="500" style="position:absolute;">
+	<div style="width:500px;margin-left:auto;margin-right:auto;">
+		
+		<!--Inserting canvas to draw-->
+		<canvas id="theCanvas" width="500" height="500" style="position:relative;">
+			Canvas not supported;please update your browser.
+		</canvas>
+	</div>
+	<!--Inserting throw button-->
+	<div style="text-align:center">
+	<input type="button" value="Throw!" onclick="throwProjectile();">
+	<table>
+		<tr>
+			<td>
+				<p>
+				<input type="range" id="speedSlider" min="0" max="80" step="1" value="30" oninput="showSpeed();" onchange="showSpeed();">
+				Initial speed=<span id="speedReadout">30</span>m/s
+			</td>
+			<td>
+				<p>
+				<input type="range" id="angleSlider" min="-90" max="90" step="1" value="10" oninput="showAngle();" onchange="showAngle();">
+				Initial angle = <span id="angleReadout">10</span>&deg;
+			</td>
+			<td>
+				<p>
+				<input type="range" id="xSlider" min="0" max="250" step="1" value="10" oninput="showPosition();" onchange="showPosition();">
+				Initial horizontal position = <span id="xReadout">10</span>m
+			</td>
+			<td>
+				<p>
+				<input type="range" id="heightSlider" min="0" max="450" step="1" value="300" oninput="showHeight();" onchange="showHeight();">
+				Initial vertical position from top = <span id="heightReadout">300</span>m
+			</td>
+		</tr>
+	</table>
+	</div>
+	<!--Drawing using javascript-->
+		<script>
+		var theCanvas =document.getElementById("theCanvas");
+		var theContext=theCanvas.getContext("2d");
+		var ay = 9.81;        // grav. constant in SI units
+		var dt = 0.2; // time step in seconds
+		var t = 0; // initial time
+		var timer,vel,yo,xo,a,angle,vx,vy,x,y; //declare all motion variable
+		var speedSlider=document.getElementById("speedSlider");
+		var angleSlider=document.getElementById("angleSlider");
+		var heightSlider=document.getElementById("heightSlider");
+		var xSlider=document.getElementById("xSlider");
+		var speedReadout=document.getElementById("speedReadout");
+		var angleReadout=document.getElementById("angleReadout");
+		var heightReadout=document.getElementById("heightReadout");
+		var xReadout=document.getElementById("xReadout");
+		function drawProjectile(){
+			theContext.clearRect(0,0,theCanvas.width,theCanvas.height);
+			theContext.beginPath();
+			theContext.arc(x,y,15,0,2*Math.PI);
+			theContext.fillStyle="red";
+			theCanvas.style.left = "-165px";
+			theCanvas.style.top = "-100px";
+			theContext.fill();
+			}
+		function throwProjectile(){
+			//adding the capability to throw it multiple times
+			if(timer){
+				window.clearTimeout(timer);
+				timer=null;
+				}
+				x=0;
+				y=0;
+				t=0;
+			moveProjectile();
+			vel=Number(speedSlider.value);
+			a=Number(angleSlider.value);
+			angle=a*Math.PI/180;//convert to radians
+			yo=Number(heightSlider.value);
+			xo=Number(xSlider.value);
+			vx=vel*Math.cos(angle);
+			vy=vel*Math.sin(angle);
+			x=xo;//position at t=0
+			y=yo;//position at t=0
+			}
+		function moveProjectile(){
+			if(y<500){
+				t+=dt;
+			}
+			t+=dt;
+			x=xo+vx*t;
+			y=yo-vy*t+.5*ay*(t*t);
+			drawProjectile();
+			if(timer)window.clearTimeout(timer);
+			timer=window.setTimeout(moveProjectile,1000*dt);
+			}
+		</script>
+	</body>
+</html>

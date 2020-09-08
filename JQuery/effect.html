@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Effect</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>Effect</h1>
+        <p>Paragraph free of any division</p>
+        <div class="mydivs" id="firstdiv">
+            <p>This is 1st para in 1st div</p>
+            <p>This is 2nd para in 1st div</p>
+        </div>
+        <div class="mydivs" id="seconddiv">
+            <p>This is 3rd para in 2nd div</p>
+        </div>
+        <div class="mydivs" id="thirddiv">
+            <ul>
+                <li>List 1</li>
+                <li>List 2</li>
+                <li>List 3</li>
+                <li>List 4</li>
+            </ul>
+        </div>
+        <button id="btn1">Hide</button>
+        <button id="btn2">Show</button>
+        <button id="btn3">Toggle</button>
+    </body>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function(){
+            //hiding first div
+            $("#btn1").click(function(){
+                $("#firstdiv").hide();
+            });
+            //showing first div
+            $("#btn2").click(function(){
+                $("#firstdiv").show();
+            });
+            //showing if first div is hidden; hiding if it's showing
+            $("#btn3").click(function(){
+                $("#firstdiv").toggle();
+            });
+            //fading out second div
+            $("#btn1").click(function(){
+                $("#seconddiv").fadeOut();
+            });
+            //fading in second div
+            $("#btn2").click(function(){
+                $("#seconddiv").fadeIn();
+            });
+            //fading in if second div is hidden;fading out if it is visible
+            $("#btn3").click(function(){
+                $("#seconddiv").fadeToggle();
+            });
+            //sliding up third div
+            $("#btn1").click(function(){
+                $("#thirddiv").slideUp();
+            });
+            //sliding down third div
+            $("#btn2").click(function(){
+                $("#thirddiv").slideDown();
+            });
+            //sliding up 3rd div if it's hidden, sliding down if visible
+            $("#btn3").click(function(){
+                $("#thirddiv").slideToggle();
+            });
+        });
+    </script>
+</html>

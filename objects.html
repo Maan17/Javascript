@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Introduction to obejcts</title>
+        <script type="text/javascript">
+            document.write("<h1>Objects</h1>");
+            //literal object way
+            var Car={
+                car_brand:"Telsa",
+                car_model:"Model 3",
+                price:35000,
+
+                //creating method(function) inside object
+                teslaAutoPilot:function(){
+                    return "<h2>This car has Auto Pilot(Method 1)</h2>";
+                }
+            }
+            document.write("<h2>"+Car.teslaAutoPilot()+"</h2>")
+            
+            //object constructors method
+            //creating multiple objects
+            function Cars(car_brand,car_model,price){
+                this.car_brand=car_brand;
+                this.car_model=car_model;
+                this.price=price;
+                this.teslaAutoPilot=function(){
+                    document.write("<h2>This car has auto pilot(Method 2)</h2>");
+                }
+            }
+            var c1=new Cars("Tesla","Model 3",35000);
+            var c2=new Cars("Tesla","Model P",45000);
+            c1.teslaAutoPilot();
+            document.write("<h2>"+c2.car_model+"</h2>");
+            
+            //object of various datatypes
+            //variable st1 is an object of string datatype
+            var str1=new String();
+            
+            //defining new property outside object definition
+            Car.fuelType="Electric";
+            document.write("<h2>"+Car.fuelType+"</h2>");
+
+            //changing value of an object's property
+            Car.price="45000";
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

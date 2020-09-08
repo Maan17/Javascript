@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Effect</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>Callback & Chaining Effects</h1>
+        <button id="btn2">Chaining</button>
+        <button id="btn3">Callback</button>
+        <div class="mydivs" id="firstdiv">
+            <p>This is 1st para in 1st div</p>
+            <p>This is 2nd para in 1st div</p>
+        </div>
+        <div class="mydivs" id="seconddiv">
+            <p>This is 3rd para in 2nd div</p>
+        </div>
+    </body>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn3").click(function(){
+                //alert is only displayed after the completion of toggling
+                //this is callback
+                $("#firstdiv").fadeToggle(3000,function(){
+                    alert("Toggling is done");
+                });
+            });
+            $("#btn2").click(function(){
+                $("#seconddiv").slideUp(2000).slideDown(2000).fadeOut(1000).fadein(1000);
+            });
+        });
+    </script>
+</html>

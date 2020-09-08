@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Intoduction to jQuery UI</title>
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/JQuery/css/style.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.structure.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.theme.css">
+    </head>
+    <body>
+        <div id="mydiv">
+            <h1>Date-Time Picker</h1>
+            <input id="dateinput" placeholder="click to select date" type="text">
+        </div>
+    </body>
+    <script src="C:/Users/Maansi/Desktop/Javascript/JQuery/js/jquery.js"></script>
+    <script src="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        $("#dateinput ").datepicker({
+            //adding number of months to display
+            numberOfMonths:2,
+            //change years option
+            changeYear:true,
+            //change months
+            changeMonths:true, 
+            //displaying week number of the year
+            showWeek:true ,
+            //changing the week no. heading from wk to anything else
+            weekHeader:"wk no",
+            //displaying dates of previous months on gaps in calendar
+            showOtherMonths:true,
+            //validations for valid dates
+            //cannot go behind 2020 january 5
+            minDate:new Date(2020,0,5),
+            //cannot go forward than 2021 jan 5
+            maxDate:new Date(2021,0,5)
+        });
+    </script>
+</html>

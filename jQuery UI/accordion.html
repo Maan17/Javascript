@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Intoduction to jQuery UI</title>
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/JQuery/css/style.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.structure.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.theme.css">
+    </head>
+    <body>
+        <div id="mydiv">
+            <h1>Accordion</h1>
+            <div id="panels">
+                <h3>Maansi</h3>
+                <p>Maansi is a good girl</p>
+
+                <h3>Kashika</h3>
+                <p>Kashika is a naughty girl</p>
+
+                <h3>Abhay</h3>
+                <p>Abhay is crazy boy</p>
+            </div>
+
+            
+    </body>
+    <script src="C:/Users/Maansi/Desktop/Javascript/JQuery/js/jquery.js"></script>
+    <script src="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        $("#panels").accordion({
+            //collapse accordion on clicking on heading
+            collapsible:true,
+            //collapse accordion on hovering on heading
+            event:"mouseover",
+            //adding duration of animation
+            animate:300,
+            //selecting which accordion will be open as default
+            active:2,
+            //making the height of the block adapt to the content
+            heightStyle:true,
+            //changing arrow icon beside accordion heading
+            //use the names from jquery ui website
+            icons:{header:"ui-icon-plus",activeHeader:"ui-icon-minus"}
+        });
+    </script>
+</html>
