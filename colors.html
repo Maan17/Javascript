@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Colors</title>
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+               //returns an array of all of the elements that match the query
+               //select all of the buttons
+               //for each of the buttons that are selected 
+               //run the same function which takes as input the button
+               document.querySelectorAll('button').forEach(function(button){
+                   //when the button is clicked run below function
+                   button.onclick=function(){
+                       //get the hello element and change it's color to button.dataset.color
+                       //which takes a button and accesses it's dataset(color) and sets it to it
+                       document.querySelector('#hello').style.color=button.dataset.color;
+                   }
+               });
+            });
+            document.addEventListener('DOMContentLoaded',function(){
+                //returns an array of all of the elements that match the query
+                //select the select bar options
+                //when an option is selected run below function
+                document.querySelector('select').onchange=function(){
+                    //this is a special keyword that always refers to
+                    //the thing that received the event
+                    //select dropdown received the event of getting changed
+                    document.querySelector('#hello').style.color=this.value;
+                }
+             });
+        </script>
+    </head>
+    <body>
+        <h1 id="hello">Hello!</h1>
+        <button data-color="red">Red</button>
+        <button data-color="blue">Blue</button>
+        <button data-color="green">Green</button>
+        <select>
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+        </select>
+    </body>
+</html> 

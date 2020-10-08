@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Counter</title>
+        <script src="count.js">
+            //run the function when all the webpage is loaded
+            document.addEventListener('DOMContentLoaded',function(){
+                //on submiting the form run the function
+                document.querySelector('form').onsubmit=function(){
+                    //get the name that the user input
+                    const name=document.querySelector('#name').value
+                    alert(`Hello, ${name}!`);
+                };
+            });
+        </script> 
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <form>
+            <input autofocus id="name" placeholder="Name" type="text">
+            <input type="submit">
+        </form>
+    </body>
+ 
+</html>

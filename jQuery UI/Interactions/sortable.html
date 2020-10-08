@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Interactions</title>
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/JQuery/css/style.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.structure.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.theme.css">
+    </head>
+    <body>
+        <h2>Sortable</h2>
+        <div id="mydivs">
+            <div class="cube">
+                <h3>CUBE 1</h3>
+            </div>
+            <div class="cube">
+                <h3>CUBE 2</h3>
+            </div>
+            <div class="cube">
+                <h3>CUBE 3</h3>
+            </div>
+        </div>
+    </body>
+    <script src="C:/Users/Maansi/Desktop/Javascript/JQuery/js/jquery.js"></script>
+    <script src="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        //sortable enables us to sort elements in particular order
+        //it is only applied to the parent division of the elements we want to sort
+        $("#mydivs").sortable({
+            //sorting will only happen when we drag 50 pixels
+            distance:50,
+            //after certain delay of holding sorting will happen
+            delay:50,
+            //element gets confined to it's parent element and cannot go beyond that
+            containment:"parent",
+            //whenever soting opacity changes
+            opacity:0.5,
+            //while sorting cursor changes
+            cursor:"grabbing",
+        });
+    </script>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Interactions</title>
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/JQuery/css/style.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.structure.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.theme.css">
+    </head>
+    <body>
+        <h2>Draggable Feature</h2>
+        <div id="mydivs">
+            <img id="resize" src="C:/Users/Maansi/Desktop/Javascript/DOM_Manipulations/heart.png">
+        </div>
+    </body>
+    <script src="C:/Users/Maansi/Desktop/Javascript/JQuery/js/jquery.js"></script>
+    <script src="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        $("#resize").resizable({
+            //image width cannot go beyond 500
+            maxWidth:500,
+            //mage width cannot go beyond 500
+            maxHeight:500,
+            //hides the resizeable icon
+            autoHide:true,
+            //util the image size reaches 200 it will not show that it is expanded
+            distance:200,
+            //makes the another image formed during resizeable invisible
+            ghost:false,
+            //mainting the height and width in proper ratio
+            aspectRatio:true,
+        });
+    </script>
+</html>

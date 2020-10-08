@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Interactions</title>
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/JQuery/css/style.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.structure.css">
+        <link rel="stylesheet" href="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.theme.css">
+    </head>
+    <body>
+        <h2>Draggable Feature</h2>
+        <div>
+            <div class="cube">
+                <h3>CUBE 1</h3>
+            </div>
+            <div class="cube">
+                <h3>CUBE 2</h3>
+            </div>
+        </div>
+    </body>
+    <script src="C:/Users/Maansi/Desktop/Javascript/JQuery/js/jquery.js"></script>
+    <script src="C:/Users/Maansi/Desktop/Javascript/jQuery UI/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        $(".cube").draggable({
+            //the cube will be only draggable along the y-axis
+            axis:"y",
+            //element gets confined to it's parent element and cannot go beyond that
+            containment:"parent",
+            //whenever element is dragged icon changes and opacity also changes
+            cursor:"grabbing",
+            opacity:0.5,
+            //creates an imaginary grid of 300*300 pixels and element cannot go beyond it
+            grid:[300,300],
+            //makes the cubes stick to each other when they are brought together
+            snap:true,
+            //gives the minimum distance when snap should happen
+            snapTolerance:30,
+        });
+    </script>
+</html>
