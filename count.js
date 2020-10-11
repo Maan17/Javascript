@@ -8,10 +8,19 @@ function hello(){
         heading.innerHTML="Hello";
     }
 }
+//saving the counter value in local storage
+//if there is not a value of counter in local storage
+if(!localStorage.getItem('counter')){
+    //then set the value of counter to 0
+    localStorage.setItem('counter',0);
+}
 //display the alert after each 10 clicks
 function count(){
+    //get the value for key counter and save in variable
+    let counter=localStorage.getItem('counter');
     counter++;
     document.querySelector('h1').innerHTML=counter;
+    localStorage.setItem('counter',counter);
     if(counter%10==0){
         alert(`Count is now ${counter}`);
     }
@@ -22,6 +31,7 @@ document.addEventListener('DOMContentLoaded',function(){
     //refers to the button tag in HTML and 
     //assigns function to it
     document.querySelector('button').onclick=count;
+    
 });
 
 document.addEventListener('DOMContentLoaded',function(){
