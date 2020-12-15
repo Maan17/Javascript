@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Form Validations</title>
+        <title>Animations</title>
         <script type="text/javascript">
             var opacity=0;
             var intervalID=0;
@@ -62,7 +62,74 @@
                 else
                     clearInterval(intervalID);
             }
+            document.addEventListener('DOMContentLoaded',function(){
+                const h3=document.querySelector('h3');
+                //pause the animation initially
+                h3.style.animationPlayState == 'paused';
+                //on clicking the button
+                document.querySelector('#btn').onclick=()=>{
+                    //run the animation if it is paused
+                    if(h3.style.animationPlayState==='paused'){
+                        h3.style.animationPlayState='running';
+                    }
+                    //pause the animation if it is running
+                    else{
+                        h3.style.animationPlayState='paused';
+                    }
+                }
+            })
         </script>
+        //adding styles to elements
+        <style>
+            /* specifying keyframes for animation named grow*/
+            /*specifying where should the element start with what style property
+            and where should it end with what style property*/
+            @keyframes grow{
+                from{
+                    font-size: 1px;
+                    left: 0%;
+                }
+                to{
+                    font-size: 40px;
+                    left: 50%;
+                }
+            }
+
+            @keyframes move{
+                0%{
+                    left: 0%;
+                }
+                50%{
+                    left: 50%;
+                }
+                100%{
+                    left: 0%;
+                }
+            }
+
+            /* adding style to h2 */
+            h2{
+                position:relative;
+                /* name of animation*/
+                animation-name: grow;
+                /* duration of animation*/
+                animation-duration: 2s;
+                /* direction of animation*/
+                animation-fill-mode: forwards;
+            }
+
+            h3{
+                position:relative;
+                /* name of animation*/
+                animation-name: move;
+                /* duration of animation*/
+                animation-duration: 2s;
+                /* direction of animation*/
+                animation-fill-mode: forwards;
+                /*number of times to perform animation*/
+                animation-iteration-count: infinite;
+            }
+        </style>
     </head>
     <body>
         <h1>Fade In - Fade Out</h1>
@@ -73,5 +140,8 @@
         <button onclick="fadeIn()" id="btnStop">Fade In</button>
         <h1>Scaling</h1>
         <img onmouseover="increase()" onmouseout="decrease()" id="img2" src="DOM_Manipulations\heart.png" width="100"/>
+        <h2>Changing font-size and position</h2>
+        <h3>Moving back and forth</h3>
+        <button id="btn">Toggle Animation</button>
     </body>
 </html>
