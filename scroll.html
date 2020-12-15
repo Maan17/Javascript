@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>
+            Scroll
+        </title>
+        <script>
+            //onscroll is an event that listens when we are scrollig through the window
+            //checking if we have reached the end of page
+            window.onscroll=()=>{
+                //if we have reached the end of page
+                if(window.innerHeight+window.scrollY>=document.body.offsetHeight){
+                    //change background color to green
+                    document.querySelector('body').style.background='green';
+                    //sleep functionality
+                    const sleep = ms => new Promise(res => setTimeout(res, ms));
+                    (async () => {
+                        //sleep for 500 seconds
+                        await sleep(500);
+                        //and call add post function
+                        addPosts();
+                    })();
+                      
+                }
+                //if we scroll again upwards or have not reached the end
+                else{
+                    //change or keep the background to white
+                    document.querySelector('body').style.background='white';
+                }
+            }
+            count=30
+                function addPosts(){
+                    var i=0;
+                    //append 30 new posts
+                    for(i=0;i<30;i++){
+                        var para = document.createElement("p");
+                        var node = document.createTextNode(count++);
+                        para.appendChild(node);
+                        var element = document.getElementById("div1");
+                        element.appendChild(para);
+                    }
+                }
+            
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+            <p>7</p>
+            <p>8</p>
+            <p>9</p>
+            <p>10</p>
+            <p>11</p>
+            <p>12</p>
+            <p>13</p>
+            <p>14</p>
+            <p>15</p>
+            <p>16</p>
+            <p>17</p>
+            <p>18</p>
+            <p>19</p>
+            <p>20</p>
+            <p>21</p>
+            <p>22</p>
+            <p>23</p>
+            <p>24</p>
+            <p>25</p>
+            <p>26</p>
+            <p>27</p>
+            <p>28</p>
+            <p>29</p>
+            <p>30</p>
+        </div>
+    </body>
+</html>

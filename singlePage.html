@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Single Page</title>
+        <style>
+            div{
+                display:none;
+            }
+        </style>
+        <script>
+            //function of showing and hiding pages
+            function showPage(page){
+                //select all the other pages and hide them
+                document.querySelectorAll('div').forEach(div=>{
+                     div.style.display='none';
+                })
+                //select the page that is needed and show it
+                //${page}=selecting the element that is passed
+                //#${page}=selecting the id of the element
+                document.querySelector(`#${page}`).style.display='block';
+            }
+            //when all the content is loaded
+            document.addEventListener('DOMContentLoaded',function(){
+                //then select all the buttons 
+                document.querySelectorAll('button').forEach(button=>{
+                    //for each of the buttons call function showPage on clicking them
+                    button.onclick=function(){
+                        //for the page that is clicked(this); access it's data property(dataset);
+                        //access it's data page attribute and call the show page function
+                        showPage(this.dataset.page);
+                    }
+                })
+            })
+
+        </script>
+    </head>
+    
+</html>
+<body>
+    <!--data attriutes add some additional attribute to HTML element
+    we will use date-page value-->
+    <button data-page="page1">Page 1</button>
+    <button data-page="page2">Page 2</button>
+    <button data-page="page3">Page 3</button>
+    <div id="page1">
+        <h1>This is Page 1.</h1>
+    </div>
+    <div id="page2">
+        <h1>This is Page 2.</h1>
+    </div>
+    <div id="page3">
+        <h1>This is Page 3.</h1>
+    </div>
+</body>
