@@ -34,47 +34,98 @@
                     //append 30 new posts
                     for(i=0;i<30;i++){
                         var para = document.createElement("p");
-                        var node = document.createTextNode(count++);
-                        para.appendChild(node);
+                        para.innerHTML=count+++'<button class="hide">Hide</button>'
                         var element = document.getElementById("div1");
                         element.appendChild(para);
                     }
                 }
-            
+            //if anytime anyone clicks on document as a whole
+            //take the event itself as an argument; which is a javascript object
+            document.addEventListener('click',event =>{
+                //check the target of the event;that is check what was clicked
+                //save it in variable element
+                const element=event.target;
+                //if something that was clicked has class name hide
+                //it means it was the hide button
+                if(element.className==='hide'){
+                    //take the element, then take it's parent element and add animation
+                    element.parentElement.style.animationPlayState='running';
+                    //take the parent element and add event animationend
+                    //animationend event happens when the animation is over
+                    element.parentElement.addEventListener('animationend',()=>{
+                        //when animation is over then remove the element
+                        element.parentElement.remove();
+                    })
+                }
+            })
         </script>
+        <style>
+            @keyframes hide{
+                0%{
+                    opacity:1;
+                    height: 100%;
+                    line-height: 100%;
+                    padding: 20px;
+                    margin-bottom:10px;
+                }
+                75%{
+                    opacity:0;
+                    height: 100%;
+                    line-height: 100%;
+                    padding: 20px;
+                    margin-bottom:10px;
+                }
+
+                100%{
+                    opacity:0;
+                    height: 0px;
+                    line-height: 0px;
+                    padding: 0px;
+                    margin-bottom: 0px; 
+                }
+            }
+
+            p{
+                /*provide animation to paragraph*/
+                animation-name:hide;
+                animation-duration:2s;
+                animation-fill-mode:forwards;
+                animation-play-state:paused;
+            }
+        </style>
     </head>
     <body>
         <div id="div1">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>4</p>
-            <p>5</p>
-            <p>6</p>
-            <p>7</p>
-            <p>8</p>
-            <p>9</p>
-            <p>10</p>
-            <p>11</p>
-            <p>12</p>
-            <p>13</p>
-            <p>14</p>
-            <p>15</p>
-            <p>16</p>
-            <p>17</p>
-            <p>18</p>
-            <p>19</p>
-            <p>20</p>
-            <p>21</p>
-            <p>22</p>
-            <p>23</p>
-            <p>24</p>
-            <p>25</p>
-            <p>26</p>
-            <p>27</p>
-            <p>28</p>
-            <p>29</p>
-            <p>30</p>
+            <p>1<button class="hide">Hide</button></p>
+            <p>2<button class="hide">Hide</button></p>
+            <p>3<button class="hide">Hide</button></p>
+            <p>4<button class="hide">Hide</button></p>
+            <p>5<button class="hide">Hide</button></p>
+            <p>6<button class="hide">Hide</button></p>
+            <p>7<button class="hide">Hide</button></p>
+            <p>8<button class="hide">Hide</button></p>
+            <p>9<button class="hide">Hide</button></p>
+            <p>10<button class="hide">Hide</button></p>
+            <p>11<button class="hide">Hide</button></p>
+            <p>12<button class="hide">Hide</button></p>
+            <p>13<button class="hide">Hide</button></p>
+            <p>14<button class="hide">Hide</button></p>
+            <p>15<button class="hide">Hide</button></p>
+            <p>16<button class="hide">Hide</button></p>
+            <p>17<button class="hide">Hide</button></p>
+            <p>18<button class="hide">Hide</button></p>
+            <p>19<button class="hide">Hide</button></p>
+            <p>20<button class="hide">Hide</button></p>
+            <p>21<button class="hide">Hide</button></p>
+            <p>22<button class="hide">Hide</button></p>
+            <p>23<button class="hide">Hide</button></p>
+            <p>24<button class="hide">Hide</button></p>
+            <p>25<button class="hide">Hide</button></p>
+            <p>26<button class="hide">Hide</button></p>
+            <p>27<button class="hide">Hide</button></p>
+            <p>28<button class="hide">Hide</button></p>
+            <p>29<button class="hide">Hide</button></p>
+            <p>30<button class="hide">Hide</button></p>
         </div>
     </body>
 </html>
