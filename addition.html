@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+
+        <title>Hello</title>
+        <style>
+            @keyframes grow{
+                from{
+                    font-size: 1px;
+                }
+                to{
+                    font-size: 100px;
+                }
+            }
+
+            .form-control{
+                width: 150px;
+                height:45px;
+                margin: auto;
+                margin-bottom: 30px;
+                border: 1px solid green;
+            }
+            .form-control:focus {
+                border-color: green;
+                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(48, 236, 10, 0.856);
+                outline: 0 none;
+            }
+            #app{
+                text-align: center;
+                font-family: 'Patrick Hand SC', cursive;
+                margin: auto;
+                max-width: 800px;
+                width: 85%;
+                margin: 0 auto;
+                padding: 100px 0;
+            }
+
+            #problem{
+                font-size: 150px;
+            }
+
+            #winner{
+                font-size: 72px;
+                color: green; 
+                position:relative;
+                animation-name: grow;
+                animation-duration: 3s;
+                animation-fill-mode: both;
+                animation-iteration-count: infinite;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-sm">
+            <div id="app"></div>
+        </div>
+        <script type="text/babel">
+            class Hello extends React.Component{
+                render(){
+                    return(
+                     <h1>Hello, {this.props.name} </h1>
+                    );
+                }
+            }
+            //create a new class App, which will be a react component
+            class App extends React.Component{
+                constructor(props){
+                    super(props);
+                    this.state = {
+                        num1: Math.ceil(Math.random()*10),
+                        num2: Math.ceil(Math.random()*10),
+                        response: "",
+                        score: 0,
+                        flag: 1
+                    };
+                }
+
+                render(){
+
+                    if(this.state.score === 1){
+                        return(
+                            <div id="winner">You Win!!</div>
+                        );
+                    }
+                    const answer = parseInt(this.state.response);
+                    if (this.state.flag===0){
+                        return(
+                            <div>
+                                <div id="problem">{this.state.num1}+{this.state.num2}</div>
+                                <input class="form-control" onKeyPress={this.inputKeyPress} onChange= {this.updateResponse} value= {this.state.response} />
+                                <h1>Score: <span class="badge bg-danger">{this.state.score}</span></h1>
+                                <h4>You typed: {this.state.a} </h4>
+                            </div>
+                        );
+                    }
+                    else{
+                        return(
+                            <div>
+                                <div id="problem">{this.state.num1}+{this.state.num2}</div>
+                                <input class="form-control" onKeyPress={this.inputKeyPress}  value= {this.state.response} onChange= {this.updateResponse}/>
+                                <h1>Score: <span class="badge bg-success">{this.state.score}</span></h1>
+                                <h4>You typed: {this.state.a} </h4>
+                            </div>
+                        );
+                    }
+                }
+
+                inputKeyPress = (event) => {
+                    if (event.key === 'Enter'){
+                        const answer = parseInt(this.state.response);
+                        if (answer === this.state.num1 + this.state.num2){
+                            //User got question right
+                            this.setState(state =>({
+                                score: state.score + 1,
+                                num1: Math.ceil(Math.random()*10),
+                                num2: Math.ceil(Math.random()*10),
+                                a: this.state.response,
+                                flag: 1,
+                                response: ""
+                            }));
+                        } 
+                        else{
+                            //User got question wrong
+                            this.setState(state =>({
+                                score: state.score - 1,
+                                a: this.state.response,
+                                flag: 0
+                            }))
+                        }
+                    }
+                }
+                updateResponse = (event) =>{
+                    this.setState({  
+                        response: event.target.value,
+                    });
+                }
+            }
+            ReactDOM.render(<App />, document.querySelector('#app'));
+        </script>
+    </body>
+</html>
