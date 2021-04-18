@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Event page</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+</head>
+<body id="9">
+	<div class="container">
+		<header class="row">
+
+
+		<h1 class="text-center">Events page: #9</h1>
+
+		</header>
+
+	<section class="content">
+
+		<aside class="col-xs-4">
+
+		<ul>
+		<li id="homepage"><a href="1.html">home</a></li>
+		<li id="page2"><a href="2.html">Variables for strings</a></li>
+		<li id="page3"><a href="3.html">Variables for Numbers</a></li>
+		<li id="page4"><a href="4.html">Arrays</a></li>
+		<li id="page5"><a href="5.html">If Statements</a></li>
+		<li id="page6"><a href="6.html">Loops</a></li>
+		<li id="page7"><a href="7.html">Math</a></li>
+		<li id="page8"><a href="8.html">Functions</a></li>
+		<li id="page9"><a href="9.html">Event Handlers</a></li>
+		<li id="page10"><a href="10.html">Printing Arrays</a></li>
+		</ul>
+			
+			
+		</aside><!--SIDEBAR-->
+
+
+		<article class="main-content col-xs-8">
+			
+<!-- Step 1
+
+PUT AN onclick even handler on this button below and call and alert() 
+function saying anything you want, like we did on the video. 
+
+-->
+
+<button id="theButton" onclick = "alert('Event Handling');" class="btn btn-primary">SUBMIT</button>
+
+
+
+
+<!--Step 2 Open this page and refresh -->
+	
+
+<!-- NEXT....We are going to handle events differently by using document.getElementById() with onclick().Don't Panic I will help you on this a little :) -->
+
+
+<!--********************NEXT SECTION **************-->
+
+<!--STEP 1 - Create a button with an id of clickMe that says Click Me-->
+
+
+
+
+<!--BUTTON HERE-->
+
+<button id="clickMe" class="btn btn-primary"></button>
+
+<script>
+
+
+// Step 2 Make a function with the name ClickMe and inside the curly brakets call an alert() function to display any text you want.
+
+
+//function here........
+
+
+function clickMe(){
+	alert('Using get element by id')
+}
+
+
+
+//document.write() here.......
+
+
+
+
+
+
+// Step 3 Create a document.getElementById() and put the Id you made in Step 1 inside the parentheses.
+
+document.getElementById('clickMe').onclick = function(){
+	clickMe();
+};
+
+// Step 4. Use a dot notation to append onclick = function(){} to the document.getELementById().
+
+
+
+
+//Step 5 Put the name of the function Clickme inside the curly brackets of the Step 3 function you made, and remember to put a semicolon for this statement at end in the curly bracket.
+
+	
+
+//Step 6 -Open your page and refresh, and click the button that says CLICK ME
+
+
+
+
+
+
+
+</script>
+
+
+
+<script>
+
+</script>
+
+<h1 id="divContent"></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		</article><!--MAIN CONTENT-->
+</section><!--CONTENT-->
+	</div><!--Container-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="js/myscript.js"></script>
+</body>
+</html>

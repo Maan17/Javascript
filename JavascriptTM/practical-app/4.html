@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays </title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+</head>
+<body id="4">
+	<div class="container">
+		<header class="row">
+
+		<h1 class="text-center">Arrays page: #4</h1>
+
+		</header>
+
+	<section class="content">
+
+		<aside class="col-xs-4">
+
+		<ul>
+		<li id="homepage"><a href="1.html">home</a></li>
+		<li id="page2"><a href="2.html">Variables for strings</a></li>
+		<li id="page3"><a href="3.html">Variables for Numbers</a></li>
+		<li id="page4"><a href="4.html">Arrays</a></li>
+		<li id="page5"><a href="5.html">If Statements</a></li>
+		<li id="page6"><a href="6.html">Loops</a></li>
+		<li id="page7"><a href="7.html">Math</a></li>
+		<li id="page8"><a href="8.html">Functions</a></li>
+		<li id="page9"><a href="9.html">Event Handlers</a></li>
+		<li id="page10"><a href="10.html">Printing Arrays</a></li>
+		</ul>
+			
+			
+		</aside><!--SIDEBAR-->
+
+
+		<article class="main-content col-xs-8">
+
+					     <!-- FUNCTION BELOW-->
+			<button onclick="SeeTheArray();" id="theButton" class="btn btn-primary">SUBMIT</button>
+	
+<script>
+
+
+
+/*STEP 1 - Make an array and place values inside */
+
+
+var arr = new Array(10,20,30,40);
+
+
+function SeeTheArray(){
+
+
+// STEP 2 Replace the text "ARRAYNME-HERE" below with your array's name 
+
+
+
+document.getElementById('divContent').innerHTML = arr;
+
+
+}
+
+
+// STEP 3 - Open this page if is not open and refresh
+
+
+</script>
+
+<h1 id="divContent"></h1>
+
+
+
+
+
+		</article><!--MAIN CONTENT-->
+</section><!--CONTENT-->
+	</div><!--Container-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="js/myscript.js"></script>
+</body>
+</html>
