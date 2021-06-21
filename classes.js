@@ -16,7 +16,7 @@ class Wizard extends Player{
     constructor(name, type){
         //calling constructor function of parent class
         super(name, type)
-    }
+    }   
     play(){
         console.log(`WEEEEE I'am a ${this.type}`);
     }
