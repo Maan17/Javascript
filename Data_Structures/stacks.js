@@ -62,3 +62,40 @@ class Node {
   myStack.pop();
   myStack.printStack();
   myStack.pop();
+
+  //STACKS
+  class Stack {
+    constructor(){
+      this.array = [];
+    }
+    peek() {
+      return this.array.length[this.array.length-1];
+    }
+    
+    // traversal is from top to bottom, not bottom to top
+    // here top is holding reference of previous nodes
+    push(value){
+      this.array.push(value);
+    }
+    pop(){
+      console.log("Popped Item is: "+this.array.pop());
+    }
+    printStack(){
+      console.log("The Stack is: ");
+      for(var i =this.array.length-1; i>=0 ; i--){
+        console.log(this.array[i]);
+      }
+    }
+  }
+  
+  const myStack = new Stack();
+  myStack.push('I');
+  myStack.push('S');
+  myStack.push('N');
+  myStack.push('A');
+  myStack.push('A');
+  myStack.push('M');
+  myStack.printStack();
+  myStack.pop();
+  myStack.printStack();
+  myStack.pop();
